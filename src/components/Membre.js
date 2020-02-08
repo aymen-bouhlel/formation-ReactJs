@@ -1,14 +1,11 @@
 import React, { Fragment } from 'react'
 
-const Membre = (props) => {
-  const name = props.nom
-  const age = props.age
+const Membre = ({ nom, age }) => {
   return (
     <Fragment>
-      <h2>Membre de famille :{name.toUpperCase()}</h2>
+      <h2>Membre de famille :{nom.toUpperCase()}</h2>
       <h2>Age: {age}</h2>
-    </Fragment>
-    
+    </Fragment>  
   )
 }
 
