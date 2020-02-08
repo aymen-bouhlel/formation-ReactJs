@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-const Membre = () => {
-  const name = 'Bilel'
+const Membre = (props) => {
+  const name = props.nom
+  const age = props.age
   return (
-    <h2>Membre de famille :{name.toUpperCase()}</h2>
-  ) 
+    <Fragment>
+      <h2>Membre de famille :{name.toUpperCase()}</h2>
+      <h2>Age: {age}</h2>
+    </Fragment>
+    
+  )
 }
 
 export default Membre
