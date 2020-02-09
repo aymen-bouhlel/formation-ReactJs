@@ -30,13 +30,20 @@ class App extends Component {
   handleClick1Year = () => {
     const familleCopie = {...this.state.famille}
     familleCopie.membre1.age ++
-    this.setState({familleCopie : famille})
+    this.setState({famille: familleCopie})
   }
 
   handleClick2Year = (number) => {
     const familleCopie = {...this.state.famille}
     familleCopie.membre1.age += number
     this.setState({familleCopie : famille})
+  }
+
+  handleChange = (event) => {
+    const familleCopie = {...this.state.famille}
+    const nomEntree = event.currentTarget.value
+    famille.membre1.nom = nomEntree
+    this.setState({famille: familleCopie})
   }
 
   render () {
@@ -46,6 +53,7 @@ class App extends Component {
       <div className='App'>
         <h1>{titre}</h1>
         <h2> de type {type}</h2>
+        <input type="text" name="" value={famille.membre1.nom} onChange={this.handleChange} />
         <Member nom='Anton' age='22' />
         <Member nom='Farid' age='35' />
         <Member nom='Junior' age='18' />
