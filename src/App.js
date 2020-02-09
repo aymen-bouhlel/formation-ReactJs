@@ -27,7 +27,9 @@ class App extends Component {
   }
 
   handleClick = () => {
-    console.log('Click')
+    const familleCopie = {...this.state.famille}
+    familleCopie.membre1.age ++
+    this.setState({familleCopie : famille})
   }
 
   render () {
