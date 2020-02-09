@@ -25,8 +25,14 @@ class App extends Component {
   state = {
     famille 
   }
+
+  handleClick = () => {
+    console.log('Click')
+  }
+
   render () {
     const { titre, type } = this.props
+    const {famille} = this.state
     return (
       <div className='App'>
         <h1>{titre}</h1>
@@ -35,10 +41,11 @@ class App extends Component {
         <Member nom='Farid' age='35' />
         <Member nom='Junior' age='18' />
         <Member nom='Samir' age='40' />
-        <Member nom={this.state.famille.membre1.nom} age={this.state.famille.membre1.age} />
-        <Member nom={this.state.famille.membre2.nom} age={this.state.famille.membre2.age} />
-        <Member nom={this.state.famille.membre3.nom} age={this.state.famille.membre3.age} />
-        <Member nom={this.state.famille.membre4.nom} age={this.state.famille.membre4.age} />
+        <Member nom={famille.membre1.nom} age={famille.membre1.age} />
+        <Member nom={famille.membre2.nom} age={famille.membre2.age} />
+        <Member nom={famille.membre3.nom} age={famille.membre3.age} />
+        <Member nom={famille.membre4.nom} age={famille.membre4.age} />
+        <button onClick={this.handleClick} >Vieillir</button>
       </div>
     )
   }
