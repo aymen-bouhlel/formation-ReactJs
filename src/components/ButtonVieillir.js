@@ -1,4 +1,5 @@
 import React from 'react'
+import './ButtonVieillir.css'
 
 const ButtonVieillir = ({ vieillir }) => {
   const btnTitle = 'Vieillir'
