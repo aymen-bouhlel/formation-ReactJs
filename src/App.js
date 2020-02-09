@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Member from './components/Membre'
+import ButtonVieillir from './components/ButtonVieillir'
 
 const famille = {
   membre1 : {
@@ -26,9 +27,15 @@ class App extends Component {
     famille 
   }
 
-  handleClick = () => {
+  handleClick1Year = () => {
     const familleCopie = {...this.state.famille}
     familleCopie.membre1.age ++
+    this.setState({familleCopie : famille})
+  }
+
+  handleClick2Year = (number) => {
+    const familleCopie = {...this.state.famille}
+    familleCopie.membre1.age += number
     this.setState({familleCopie : famille})
   }
 
@@ -47,7 +54,8 @@ class App extends Component {
         <Member nom={famille.membre2.nom} age={famille.membre2.age} />
         <Member nom={famille.membre3.nom} age={famille.membre3.age} />
         <Member nom={famille.membre4.nom} age={famille.membre4.age} />
-        <button onClick={this.handleClick} >Vieillir</button>
+        <ButtonVieillir vieillir={this.handleClick1Year} />
+        <ButtonVieillir vieillir={() => this.handleClick2Year(2)} />
       </div>
     )
   }
